@@ -25,6 +25,7 @@ public:
 	int xres, yres;
 	float w;
 	float dir;
+	float r,gr,b;
 	float pos[2];
 	Global();
 } g;
@@ -82,6 +83,8 @@ Global::Global()
 {
 	xres = 400;
 	yres = 200;
+	r = 1.0;
+	gr = 0.6;
 	w = 20.0f;
 	dir = 25.0f;
 	pos[0] = 0.0f + w;
@@ -265,8 +268,10 @@ void render()
 	glClear(GL_COLOR_BUFFER_BIT);
 	//Draw box.
 	glPushMatrix();
+	//ifdef test1
+	if (g.xres == 
+	glColor3f(g.r, g.gr, g.b);
 	//glColor3ub(150, 160, 220);
-	glColor3ub(100, 160, 120);
 	glTranslatef(g.pos[0], g.pos[1], 0.0f);
 	glBegin(GL_QUADS);
 		glVertex2f(-g.w, -g.w);
