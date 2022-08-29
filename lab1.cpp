@@ -269,8 +269,19 @@ void render()
 	//Draw box.
 	glPushMatrix();
 	//ifdef test1
-	if (g.xres == 
-	glColor3f(g.r, g.gr, g.b);
+	if (g.xres >= 20 && g.xres <= 399)
+	{
+		glColor3ub(255, 0, 0);
+	}
+	else if (g.xres == 400)
+	{
+		glColor3ub(150, 160, 220);
+	}
+	else if (g.xres >= 401)
+	{
+		glColor3ub(128, 0, 255);
+	}
+	//glColor3f(g.r, g.gr, g.b);
 	//glColor3ub(150, 160, 220);
 	glTranslatef(g.pos[0], g.pos[1], 0.0f);
 	glBegin(GL_QUADS);
